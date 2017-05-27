@@ -1,3 +1,63 @@
+$str0 = '重庆重庆市沙坪坝区虎溪街道重庆师范大学大学城校区雅风苑c幢';
+$str1 = '广东省深圳市南山区龙珠4路金谷创业园魔方公寓2栋4楼2号';
+$str2 = '新疆维吾尔族自治区吐鲁番地区吐鲁番市xx小区2栋4楼2号';
+$str3 = '西藏自治区昌都地区昌都县南街234号xx小区2栋4楼2号';
+$str4 = '内蒙古自治区阿拉善盟阿拉善左旗二大队39号';
+$str5 = '北京北京市东城区第二胡同1349号王家大院';
+$xx = getAddressInfo($str0);
+print_r($xx);
+结果：
+Array
+(
+    [province] => 重庆
+    [city] => 重庆市
+)
+
+$xx = getAddressInfo($str1);
+print_r($xx);
+结果：
+Array
+(
+    [province] => 广东省
+    [city] => 深圳市
+)
+
+$xx = getAddressInfo($str2);
+print_r($xx);
+结果：
+Array
+(
+    [province] => 新疆维吾尔族自治区
+    [city] => 吐鲁番地区
+)
+
+$xx = getAddressInfo($str3);
+print_r($xx);
+结果：
+Array
+(
+    [province] => 西藏自治区
+    [city] => 昌都地区
+)
+
+$xx = getAddressInfo($str4);
+print_r($xx);
+结果：
+Array
+(
+    [province] => 内蒙古自治区
+    [city] => 阿拉善盟
+)
+
+$xx = getAddressInfo($str5);
+print_r($xx);
+结果：
+Array
+(
+    [province] => 北京
+    [city] => 北京市
+)
+
 function getAddressInfo($str)
 {
     preg_match("/(.*省|.*自治区)?(.*自治州|.*地区|.*盟|.*直辖|.*州|.*市)?/", $str,$address);
