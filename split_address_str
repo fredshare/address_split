@@ -1,0 +1,23 @@
+function getAddressInfo($str)
+{
+    preg_match("/(.*省|.*自治区)?(.*自治州|.*地区|.*盟|.*直辖|.*州|.*市)?/", $str,$address);
+
+    $province = $address[1];
+    $city = $address[2];
+    if(empty($province))
+    {
+        $citys = array('北京','上海','天津','重庆');
+        foreach ($citys as $key => $value) 
+        {
+            if(strstr($city,$value))
+            {
+                $city = $value.'市';
+                $province = $value;
+            }
+        }         
+    }
+    return array(
+        'province' => $province,
+        'city' => $city
+        );
+}
