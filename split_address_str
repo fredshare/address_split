@@ -60,7 +60,7 @@ Array
 
 function getAddressInfo($str)
 {
-    preg_match("/(.*省|.*自治区)?(.*自治州|.*地区|.*盟|.*直辖|.*州|.*市)?/", $str,$address);
+    preg_match("/(.*?省|.*?自治区)?(.*?自治州|.*?地区|.*?盟|.*?直辖|.*?州|.*?市)?/", $str,$address);
 
     $province = $address[1];
     $city = $address[2];
